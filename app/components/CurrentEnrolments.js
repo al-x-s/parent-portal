@@ -2,7 +2,7 @@ import React from "react";
 import EnrolledChild from "./EnrolledChild";
 import Link from "next/link";
 
-const CurrentEnrolments = () => {
+const CurrentEnrolments = ({ students }) => {
   return (
     <>
       <div className="flex w-full justify-between items-center">
@@ -14,16 +14,14 @@ const CurrentEnrolments = () => {
           Enrol a child
         </Link>
       </div>
-      <EnrolledChild
-        name={"Harry Edwards"}
-        school={"North Rocks Public School"}
-        instrument={"Clarinet"}
-      />
-      <EnrolledChild
-        name={"Jennifer Edwards"}
-        school={"North Rocks Public School"}
-        instrument={"Piano"}
-      />
+      {students.map(({ firstName, lastName, school, instrument }, index) => (
+        <EnrolledChild
+          key={index}
+          name={firstName + " " + lastName}
+          school={school}
+          instrument={instrument}
+        />
+      ))}
     </>
   );
 };
