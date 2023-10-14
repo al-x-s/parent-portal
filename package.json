@@ -16,6 +16,9 @@
     "next-auth": "^4.23.2",
     "react": "^18",
     "react-dom": "^18",
+    "react-feather": "^2.0.10",
+    "react-focus-lock": "^2.9.6",
+    "react-remove-scroll": "^2.5.7",
     "zod": "^3.22.4"
   },
   "devDependencies": {

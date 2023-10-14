@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 import "./globals.css";
-import NavBar from "./components/NavBar";
 
 import AuthProvider from "./auth/provider.js";
+import Header from "./components/Header/Header.js";
 
 export const metadata = {
   title: "TSA Parent Portal",
@@ -15,10 +15,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="flex flex-col min-h-screen">
         <AuthProvider>
-          <NavBar />
-          <main className="p-5 flex justify-center">
-            <Suspense fallback={<p>Loading...</p>}>{children}</Suspense>
-          </main>
+          <Header />
+          <Suspense fallback={<p>Loading...</p>}>{children}</Suspense>
           <footer className="sticky bottom-0 bg-slate-700 text-white text-center p-2 mt-auto">
             Copyright Alex Slater
           </footer>

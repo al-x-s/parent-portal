@@ -42,14 +42,16 @@ const SignUpForm = () => {
 
   return (
     <form
-      className="flex flex-col max-w-md shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      className="flex flex-col max-w-md rounded px-8 pt-6 mb-2"
       onSubmit={handleSubmit}
     >
-      <h1 className="text-xl font-bold pb-3 text-center">Create an Account</h1>
+      <h1 className="text-xl text-slate-50 font-bold pb-3">
+        Create an Account
+      </h1>
       <div className="mb-4">
         <label
           htmlFor="firstName"
-          className="block text-gray-700 text-sm font-bold mb-2"
+          className="block text-slate-50 text-sm font-bold mb-2"
         >
           First Name:{" "}
         </label>
@@ -64,7 +66,7 @@ const SignUpForm = () => {
       <div className="mb-4">
         <label
           htmlFor="email"
-          className="block text-gray-700 text-sm font-bold mb-2"
+          className="block text-slate-50 text-sm font-bold mb-2"
         >
           Email:{" "}
         </label>
@@ -78,7 +80,7 @@ const SignUpForm = () => {
       </div>
       <div className="mb-6">
         <label
-          className="block text-gray-700 text-sm font-bold mb-2"
+          className="block text-slate-50 text-sm font-bold mb-2"
           htmlFor="password"
         >
           Password:

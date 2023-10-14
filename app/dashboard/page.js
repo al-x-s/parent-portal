@@ -16,11 +16,11 @@ export default async function DashboardHome() {
   });
 
   return (
-    <>
+    <main className="p-5 flex justify-center">
       <div className="flex flex-col items-center justify-center">
         <Greeting name={session.user.name} />
         <CurrentEnrolments students={students} />
       </div>
-    </>
+    </main>
   );
 }

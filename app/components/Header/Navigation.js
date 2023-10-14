@@ -1,0 +1,40 @@
+"use client";
+import React from "react";
+import Link from "next/link";
+
+import Hamburger from "./hamburger";
+
+const Navigation = ({ username, navLinks }) => {
+  return (
+    <>
+      <ul className="hidden w-full md:flex justify-between md:justify-start md:gap-4 md:items-center">
+        {navLinks.map(({ name, slug }, index) => {
+          if (name === "Sign In") {
+            return (
+              <Link
+                key={index}
+                href={slug}
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-auto"
+              >
+                {name}
+              </Link>
+            );
+          } else {
+            return (
+              <Link
+                key={index}
+                href={slug}
+                className={name === "Sign Out" ? "ml-auto" : ""}
+              >
+                {name}
+              </Link>
+            );
+          }
+        })}
+      </ul>
+      <Hamburger navLinks={navLinks} />
+    </>
+  );
+};
+
+export default Navigation;

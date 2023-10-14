@@ -6,10 +6,12 @@ import EnrolChildForm from "../components/EnrolChildForm";
 const pages = async () => {
   const session = await getServerSession(authOptions);
   return (
-    <div className="flex flex-col items-center justify-center">
-      <h1>Enrol Your Child</h1>
-      <EnrolChildForm email={session.user.email} />
-    </div>
+    <main className="p-5 flex justify-center">
+      <div className="flex flex-col items-center justify-center">
+        <h1>Enrol Your Child</h1>
+        <EnrolChildForm email={session.user.email} />
+      </div>
+    </main>
   );
 };
 
