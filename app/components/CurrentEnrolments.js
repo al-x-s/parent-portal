@@ -5,7 +5,7 @@ import Link from "next/link";
 const CurrentEnrolments = ({ students }) => {
   return (
     <>
-      <div className="flex w-full justify-between items-center">
+      <div className="flex w-full justify-between items-center mb-2">
         <h2 className="mx-2">Current Enrolments</h2>
         <Link
           className="btn border p-1 bg-orange-400 font-bold text-slate-700 rounded"
@@ -14,14 +14,17 @@ const CurrentEnrolments = ({ students }) => {
           Enrol a child
         </Link>
       </div>
-      {students.map(({ firstName, lastName, school, instrument }, index) => (
-        <EnrolledChild
-          key={index}
-          name={firstName + " " + lastName}
-          school={school}
-          instrument={instrument}
-        />
-      ))}
+      {students.map(
+        ({ firstName, lastName, school, instrument, id }, index) => (
+          <EnrolledChild
+            key={id}
+            id={id}
+            name={firstName + " " + lastName}
+            school={school.name}
+            instrument={instrument}
+          />
+        )
+      )}
     </>
   );
 };

@@ -3,18 +3,24 @@ import prisma from "@/prisma/client";
 
 export async function POST(request) {
   const body = await request.json();
-  console.log(body);
   const user = await prisma.user.findUnique({ where: { email: body.email } });
+  const school = await prisma.school.findFirst({
+    where: { name: body.school },
+  });
 
   const newStudent = await prisma.student.create({
     data: {
       firstName: body.firstName,
       lastName: body.lastName,
-      school: body.school,
+      school: {
+        connect: { id: school.id },
+      },
       grade: Number(body.grade),
       instrument: body.instrument,
       hirePurchaseOptions: body.hirePurchaseOptions,
-      parentId: user.id,
+      parent: {
+        connect: { id: user.id },
+      },
     },
   });
 

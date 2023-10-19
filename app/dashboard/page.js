@@ -13,6 +13,9 @@ export default async function DashboardHome() {
 
   const students = await prisma.student.findMany({
     where: { parentId: user.id },
+    include: {
+      school: true,
+    },
   });
 
   return (

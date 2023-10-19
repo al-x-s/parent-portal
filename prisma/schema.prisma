@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -59,14 +56,46 @@ model VerificationToken {
 }
 
 model Student {
-  id                  String   @id @default(cuid())
+  id                  String     @id @default(cuid())
   firstName           String
   lastName            String
   grade               Int
-  school              String
+  school              School     @relation(fields: [schoolId], references: [id])
+  schoolId            String
   instrument          String
   hirePurchaseOptions String
-  registeredAt        DateTime @default(now())
-  parent              User     @relation(fields: [parentId], references: [id])
+  registeredAt        DateTime   @default(now())
+  parent              User       @relation(fields: [parentId], references: [id])
   parentId            String
+  currentBook         MethodBook? @relation(fields: [currentBookId], references: [id])
+  currentBookId       String?
+  currentSong         Int?
+  compeltedBooks      Json[]
+}
+
+model MethodBook {
+  id       String    @id @default(cuid())
+  name     String
+  numSongs Int
+  Student  Student[]
+}
+
+model Event {
+  id       String   @id @default(cuid())
+  name     String
+  location String
+  start    DateTime
+  finish   DateTime
+  details  String?
+  school   School   @relation(fields: [schoolId], references: [id])
+  schoolId String
+  band     Json[]
+}
+
+model School {
+  id      String    @id @default(cuid())
+  name    String
+  bands   Json[]
+  Event   Event[]
+  Student Student[]
 }
