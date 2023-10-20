@@ -8,6 +8,17 @@ export async function POST(request) {
     where: { name: body.school },
   });
 
+  let currentBook;
+  if (body.instrument === "Piano") {
+    currentBook = "Alfred's Basic Piano Prep Course Level A";
+  } else {
+    currentBook = "Accent on Achievement Book 1";
+  }
+
+  const bookData = await prisma.methodBook.findFirst({
+    where: { name: currentBook },
+  });
+
   const newStudent = await prisma.student.create({
     data: {
       firstName: body.firstName,
@@ -20,6 +31,9 @@ export async function POST(request) {
       hirePurchaseOptions: body.hirePurchaseOptions,
       parent: {
         connect: { id: user.id },
+      },
+      currentBook: {
+        connect: { id: bookData.id },
       },
     },
   });

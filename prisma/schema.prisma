@@ -69,7 +69,7 @@ model Student {
   parentId            String
   currentBook         MethodBook? @relation(fields: [currentBookId], references: [id])
   currentBookId       String?
-  currentSong         Int?
+  currentSong         Int @default(1)
   compeltedBooks      Json[]
 }
 

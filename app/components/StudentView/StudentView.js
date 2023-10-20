@@ -92,13 +92,30 @@ const StudentView = ({ student }) => {
       <h1 className="text-3xl text font-bold text">
         {student.firstName} {student.lastName}
       </h1>
-      <div className="flex gap-2 flex-col md:flex-row flex-wrap justify-center items-center mt-2">
+      <div className="flex gap-2 flex-col md:flex-row flex-wrap justify-center items-center mt-2 md:items-stretch">
         {/* STUDENT NAME AND PROGRESS WHEEL */}
-        <div className="text-center flex flex-col justify-center items-center gap-4 bg-[#e3edf7] text-[#555] mb-2 w-11/12 md:w-5/12 pt-8 pb-8 rounded-xl shadow-md">
+        <div className="text-center flex flex-col justify-center items-center gap-4 bg-[#e3edf7] text-[#555] w-11/12 md:w-5/12 md:justify-between pt-8 pb-8 rounded-xl shadow-md">
           <h2 className="text-xl mx-2 font-semibold">Method Book Progress</h2>
           <ProgressWheel percentage={BOOK_PROGRESS_PERCENT} />
           <p className="mx-2">{student.currentBook.name}</p>
         </div>
+
+        {/* INSTRUMENT MANAGEMENT */}
+        <div className="text-center bg-[#e3edf7] text-[#555] w-11/12 md:w-5/12 p-8 rounded-xl shadow-md flex flex-col justify-center items-center md:justify-between">
+          <h2 className="text-xl mx-2 font-semibold">Instrument Management</h2>
+          <Image
+            className="w-20 m-2 p-2 md:w-32"
+            src={instrumentImage}
+            alt={instrument}
+            priority
+          ></Image>
+          <Button
+            children="Request Service"
+            className="text-center bg-indigo-500 hover:bg-indigo-700 text-white font-bold text-sm p-2 rounded focus:outline-none focus:shadow-outline mx-8"
+            href=""
+          />
+        </div>
+
         {/* UPCOMING EVENTS */}
         <div className="text-center bg-[#e3edf7] text-[#555] mb-2 w-11/12 md:w-5/12 p-8 rounded-xl shadow-md text-sm">
           <h2 className="text-xl mb-2 font-semibold">Upcoming Events</h2>
@@ -123,6 +140,7 @@ const StudentView = ({ student }) => {
             </div>
           ))}
         </div>
+
         {/* STUDENT TROPHIES AND ACHIEVEMENTS */}
         <div className="text-center bg-[#e3edf7] text-[#555] mb-2 w-11/12 md:w-5/12 p-8 rounded-xl shadow-md">
           <h2 className="text-xl mb-2 font-semibold">Trophies</h2>
@@ -143,22 +161,6 @@ const StudentView = ({ student }) => {
             ))}
           </div>
           {/* TODO: Need to create a student trophies */}
-        </div>
-
-        {/* INSTRUMENT MANAGEMENT */}
-        <div className="text-center bg-[#e3edf7] text-[#555] mb-2 w-11/12 md:w-5/12 p-8 rounded-xl shadow-md flex flex-col justify-center items-center">
-          <h2 className="text-xl mx-2 font-semibold">Instrument Management</h2>
-          <Image
-            className="w-20 m-2 p-2"
-            src={instrumentImage}
-            alt={instrument}
-            priority
-          ></Image>
-          <Button
-            children="Request Service"
-            className="text-center bg-indigo-500 hover:bg-indigo-700 text-white font-bold text-sm p-2 rounded focus:outline-none focus:shadow-outline mx-8"
-            href=""
-          />
         </div>
       </div>
     </>

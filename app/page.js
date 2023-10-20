@@ -13,7 +13,7 @@ export default async function Home() {
 
   return (
     <main
-      className="z-0 w-full h-screen bg-cover bg-no-repeat p-5 flex justify-center bg-center
+      className="z-0 h-fit bg-cover bg-no-repeat p-7 flex justify-center bg-center
       
       before:absolute
       before:inset-0
