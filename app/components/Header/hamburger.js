@@ -20,8 +20,8 @@ function Hamburger({ navLinks }) {
       {isMenuOpen && (
         <Drawer handleDismiss={toggleIsMenuOpen}>
           <ul className={styles.navigationList}>
-            {navLinks.map(({ name, slug }, index) => (
-              <Link key={index} href={slug}>
+            {navLinks.map(({ name, slug }) => (
+              <Link key={crypto.randomUUID()} href={slug}>
                 {name}
               </Link>
             ))}

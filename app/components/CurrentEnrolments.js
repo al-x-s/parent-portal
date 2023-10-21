@@ -1,14 +1,18 @@
 import React from "react";
 import EnrolledChild from "./EnrolledChild";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 const CurrentEnrolments = ({ students }) => {
+  if (students.length === 0) {
+    redirect("/enrol");
+  }
   return (
     <>
       <div className="flex w-full justify-between items-center mb-2">
         <h2 className="mx-2">Current Enrolments</h2>
         <Link
-          className="btn border p-1 bg-orange-400 font-bold text-slate-700 rounded"
+          className="text-center max-w-md bg-blue-500 hover:bg-blue-700 text-white p-2 rounded focus:outline-none focus:shadow-outline"
           href="/enrol"
         >
           Enrol a child

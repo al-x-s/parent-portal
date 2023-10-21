@@ -56,21 +56,22 @@ model VerificationToken {
 }
 
 model Student {
-  id                  String     @id @default(cuid())
+  id                  String      @id @default(cuid())
   firstName           String
   lastName            String
   grade               Int
-  school              School     @relation(fields: [schoolId], references: [id])
+  school              School      @relation(fields: [schoolId], references: [id])
   schoolId            String
   instrument          String
   hirePurchaseOptions String
-  registeredAt        DateTime   @default(now())
-  parent              User       @relation(fields: [parentId], references: [id])
+  registeredAt        DateTime    @default(now())
+  parent              User        @relation(fields: [parentId], references: [id])
   parentId            String
   currentBook         MethodBook? @relation(fields: [currentBookId], references: [id])
   currentBookId       String?
-  currentSong         Int @default(1)
+  currentSong         Int         @default(1)
   compeltedBooks      Json[]
+  trophies            Json[]
 }
 
 model MethodBook {
@@ -80,22 +81,24 @@ model MethodBook {
   Student  Student[]
 }
 
-model Event {
-  id       String   @id @default(cuid())
-  name     String
-  location String
-  start    DateTime
-  finish   DateTime
-  details  String?
-  school   School   @relation(fields: [schoolId], references: [id])
-  schoolId String
-  band     Json[]
-}
+// TODO Create an Events Table to enrol multiple schools in single event
+// model Event {
+//   id       String   @id @default(cuid())
+//   name     String
+//   location String
+//   start    DateTime
+//   finish   DateTime
+//   details  String?
+//   school   School   @relation(fields: [schoolId], references: [id])
+//   schoolId String
+//   band     Json[]
+// }
 
 model School {
   id      String    @id @default(cuid())
   name    String
   bands   Json[]
-  Event   Event[]
+  // Event   Event[]
+  events  Json[]
   Student Student[]
 }

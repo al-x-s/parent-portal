@@ -1,7 +1,7 @@
-"use client";
-import Link from "next/link";
 import React from "react";
+import Button from "../Button";
 import Image from "next/image";
+
 import flute from "/public/instruments/flute.png";
 import oboe from "/public/instruments/oboe.png";
 import clarinet from "/public/instruments/clarinet.png";
@@ -14,7 +14,7 @@ import bassGuitar from "/public/instruments/bass-guitar.png";
 import percussion from "/public/instruments/percussion.png";
 import piano from "/public/instruments/piano.png";
 
-const EnrolledChild = ({ name, school, instrument, id }) => {
+const InstrumentOptions = ({ instrument }) => {
   let instrumentImage;
   switch (instrument) {
     case "Flute":
@@ -54,28 +54,21 @@ const EnrolledChild = ({ name, school, instrument, id }) => {
       instrumentImage = piano;
       break;
   }
-
   return (
-    <Link
-      href={`/dashboard/student/${id}`}
-      className="shadow-md rounded px-8 py-6 mb-4 w-96 hover:bg-slate-100 hover:cursor-pointer"
-    >
-      <div className="flex">
-        <Image
-          className="mr-5 w-16"
-          src={instrumentImage}
-          href="/"
-          alt={instrument}
-          priority
-        ></Image>
-        <div>
-          <h2>{name}</h2>
-          <p>{school}</p>
-          <p>{instrument}</p>
-        </div>
-      </div>
-    </Link>
+    <>
+      <Image
+        className="w-20 m-2 p-2 md:w-32"
+        src={instrumentImage}
+        alt={instrument}
+        priority
+      ></Image>
+      <Button
+        children="Request Service"
+        className="text-center bg-indigo-500 hover:bg-indigo-700 text-white font-bold text-sm p-2 rounded focus:outline-none focus:shadow-outline mx-8"
+        href=""
+      />
+    </>
   );
 };
 
-export default EnrolledChild;
+export default InstrumentOptions;

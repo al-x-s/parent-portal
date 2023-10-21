@@ -10,7 +10,7 @@ const page = async ({ params }) => {
       currentBook: true,
     },
   });
-  console.log(student);
+  console.log("Student Details:", student);
   return (
     <div className="flex flex-col justify-center items-center mt-2 mb-2">
       <StudentView student={student} />

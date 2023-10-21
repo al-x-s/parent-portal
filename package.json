@@ -22,6 +22,7 @@
     "react-feather": "^2.0.10",
     "react-focus-lock": "^2.9.6",
     "react-remove-scroll": "^2.5.7",
+    "sharp": "^0.32.6",
     "zod": "^3.22.4"
   },
   "devDependencies": {
