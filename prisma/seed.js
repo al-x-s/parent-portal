@@ -2,12 +2,12 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 async function main() {
-  const tahlia = await prisma.student.upsert({
-    where: { id: "clnfcuca20006fjduyy77rrrf" },
+  const jane = await prisma.student.upsert({
+    where: { id: "lkdflkdflk" },
     update: {},
     create: {
-      firstName: "Tahlia",
-      lastName: "Edwards",
+      firstName: "Jane",
+      lastName: "Doe",
       grade: 5,
       school: {
         create: {
@@ -35,7 +35,7 @@ async function main() {
       hirePurchaseOptions: "hire",
       parent: {
         connect: {
-          email: "martin@example.com",
+          email: "demo@tsa.com.au",
         },
       },
       currentBook: {
@@ -54,7 +54,7 @@ async function main() {
     },
   });
 
-  console.log({ tahlia });
+  console.log({ jane });
 }
 main()
   .then(async () => {
