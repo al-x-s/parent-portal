@@ -6,8 +6,8 @@ import FormChildDetails from "./FormChildDetails";
 import FormInstrument from "./FormInstrument";
 
 const INITIAL_DATA = {
-  firstname: "",
-  lastname: "",
+  firstName: "",
+  lastName: "",
   school: "",
   grade: "",
   instrument: "",

@@ -15,6 +15,7 @@ const FormChildDetails = ({
       <input
         required
         className="border shadow p-1"
+        id="firstName"
         name="firstName"
         type="text"
         value={firstName}
@@ -25,6 +26,7 @@ const FormChildDetails = ({
       <input
         required
         className="border shadow p-1"
+        id="lastName"
         name="lastName"
         type="text"
         value={lastName}
@@ -36,6 +38,7 @@ const FormChildDetails = ({
         required
         className="border shadow p-1"
         name="school"
+        id="school"
         onChange={(e) => updateFields({ school: e.target.value })}
       >
         <option value="">Please Select</option>
@@ -48,6 +51,7 @@ const FormChildDetails = ({
         required
         className="border shadow p-1"
         name="grade"
+        id="grade"
         onChange={(e) => updateFields({ grade: e.target.value })}
       >
         <option value="">Please Select</option>

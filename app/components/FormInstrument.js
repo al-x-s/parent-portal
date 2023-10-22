@@ -9,6 +9,7 @@ const FormInstrument = ({ instrument, hirePurchaseOptions, updateFields }) => {
       <select
         value={instrument}
         name="instrument"
+        id="instrument"
         className="border shadow p-1"
         required
         onChange={(e) => updateFields({ instrument: e.target.value })}
@@ -34,6 +35,7 @@ const FormInstrument = ({ instrument, hirePurchaseOptions, updateFields }) => {
       <select
         value={hirePurchaseOptions}
         name="hirePurchaseOptions"
+        id="hirePurchaseOptions"
         className="border shadow p-1"
         required
         onChange={(e) => updateFields({ hirePurchaseOptions: e.target.value })}
