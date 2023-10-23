@@ -36,7 +36,7 @@ const Header = async () => {
   }
 
   return (
-    <header className="z-20 flex justify-between  bg-slate-200 p-5 ">
+    <header className="z-20 flex justify-center  bg-slate-200 p-5 ">
       <div className="flex w-screen max-w-7xl items-center justify-between">
         <Image
           className="mr-5 w-16"

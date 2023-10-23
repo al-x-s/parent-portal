@@ -13,23 +13,11 @@ export default async function Home() {
 
   return (
     <main
-      className="z-0 h-fit bg-cover bg-no-repeat p-7 flex justify-center bg-center
+      className="z-0 h-screen bg-cover bg-no-repeat p-7 flex justify-center bg-center
       
-      before:absolute
-      before:inset-0
-      
-      before:bg-gradient-to-r
-      before:from-indigo-500
-      before:to-indigo-300
-      before:opacity-75
-      before:z-[-5]
-      mix-blend-overlay"
-      style={{
-        backgroundImage:
-          "url('https://teachingservices.com.au/wp-content/uploads/2019/08/Euphonium.jpeg')",
-      }}
+      bg-[linear-gradient(to_right_bottom,rgba(63,81,181,0.8),rgba(121,134,203,0.8)),url('https://teachingservices.com.au/wp-content/uploads/2019/08/Euphonium.jpeg')]"
     >
-      <div className="flex flex-col">
+      <div className="flex flex-col h-fit">
         <h1 className="pb-2 text-xl text-slate-50 font-bold text-center">
           Teaching Services Australia Parent Portal
         </h1>
