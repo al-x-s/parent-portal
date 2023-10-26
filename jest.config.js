@@ -8,5 +8,4 @@ module.exports = {
       lines: 80,
     },
   },
-  //   setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
 };
