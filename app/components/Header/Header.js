@@ -11,18 +11,18 @@ const Header = async () => {
   const session = await getServerSession(authOptions);
 
   const authLinks = [
-    { name: "Home", slug: "/dashboard", prefetch: true },
-    { name: "Instrument Hire", slug: "/hire", prefetch: true },
-    { name: "Accessories", slug: "/accessories", prefetch: true },
-    { name: "Payments", slug: "/payments", prefetch: true },
-    { name: "Get Help", slug: "/help", prefetch: true },
-    { name: "Sign Out", slug: "/api/auth/signout", prefetch: false },
+    { name: "Home", slug: "/dashboard", pf: true },
+    { name: "Instrument Hire", slug: "/hire", pf: true },
+    { name: "Accessories", slug: "/accessories", pf: true },
+    { name: "Payments", slug: "/payments", pf: true },
+    { name: "Get Help", slug: "/help", pf: true },
+    { name: "Sign Out", slug: "/api/auth/signout", pf: false },
   ];
 
   const unAuthLinks = [
-    { name: "Home", slug: "/", prefetch: true },
-    { name: "Contact", slug: "/help", prefetch: true },
-    { name: "Sign In", slug: "/api/auth/signin", prefetch: false },
+    { name: "Home", slug: "/", pf: true },
+    { name: "Contact", slug: "/help", pf: true },
+    { name: "Sign In", slug: "/api/auth/signin", pf: false },
   ];
 
   let navLinks;
