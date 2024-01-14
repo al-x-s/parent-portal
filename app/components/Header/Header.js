@@ -12,16 +12,16 @@ const Header = async () => {
 
   const authLinks = [
     { name: "Home", slug: "/dashboard", pf: true },
-    { name: "Instrument Hire", slug: "/hire", pf: true },
-    { name: "Accessories", slug: "/accessories", pf: true },
-    { name: "Payments", slug: "/payments", pf: true },
-    { name: "Get Help", slug: "/help", pf: true },
+    { name: "Instrument Hire", slug: "/wip", pf: true },
+    { name: "Accessories", slug: "/wip", pf: true },
+    { name: "Payments", slug: "/wip", pf: true },
+    { name: "Get Help", slug: "/wip", pf: true },
     { name: "Sign Out", slug: "/api/auth/signout", pf: false },
   ];
 
   const unAuthLinks = [
     { name: "Home", slug: "/", pf: true },
-    { name: "Contact", slug: "/help", pf: true },
+    { name: "Preview App", slug: "/preview", pf: true },
     { name: "Sign In", slug: "/api/auth/signin", pf: false },
   ];
 

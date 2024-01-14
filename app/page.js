@@ -22,6 +22,12 @@ export default async function Home() {
           Teaching Services Australia Parent Portal
         </h1>
         <SignUpForm />
+
+        <Button
+          href="/preview"
+          children="Preview App"
+          className="text-center max-w-md bg-green-500 hover:bg-green-700 text-white font-bold py-2 rounded focus:outline-none focus:shadow-outline mx-8"
+        />
         <p className="text-slate-50 text-center pb-2 font-bold">or</p>
         <Button
           href="api/auth/signin"
